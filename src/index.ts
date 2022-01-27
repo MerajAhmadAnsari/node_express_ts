@@ -90,7 +90,10 @@ app.get("/pingparam/:id", (req: Request, resp: Response) => {
 
 /**
  * post
- * POST  http://localhost:9000/postjsondatawithrequestqueryparam/12?type=leave with json - {"name":"testuser", "city" : "NY"} ---> {"Id":"12","Name":"testuser","City":"NY"}
+ * POST  http://localhost:9000/postjsondatawithrequestqueryparam/12?type=leave with json - {"name":"testuser", "city" : "NY"} ---> {"Id":"12","Type":"leave","Name":"testuser","City":"NY"}
+ * POST http://localhost:9000/postjsondatawithrequestqueryparam/12?newtype= with json - {"name":"testuser", "city" : "NY"} ---> {"Id":"12","Name":"testuser","City":"NY"}
+ * POST http://localhost:9000/postjsondatawithrequestqueryparam/12?type= with json - {"name":"testuser", "city" : "NY"} ---> {"Id":"12","Type":"","Name":"testuser","City":"NY"}
+ * POST http://localhost:9000/postjsondatawithrequestqueryparam/14 with json - {"name":"testuser", "city" : "NY"} ---> {"Id":"14","Name":"testuser","City":"NY"}
  */
 
  app.post('/postjsondatawithrequestqueryparam/:id', (req:Request, resp:Response) => {
